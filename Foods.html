@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our foods</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="https://img.freepik.com/premium-vector/beautiful-unique-food-restaurant-company-logo-design_981150-2156.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <!--  -->
+            <a href="index.html" class="logo"> <i class="fas fa-utensils"></i> <span style="text-transform: lowercase;color:red">O</span>Rd<font color="red">E</font>rIn<span style="color: red;">G</span></a>
+            <div class="icons">
+                <div id="toggle-dark-mode" class="dark-mode-btn">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="searchBox">
+                <label for="searchBox" class="fas fa-search"></label>
+            </form>
+        
+            <div class="icons">
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fa-solid fa-cart-shopping" id="theme-btn"></div>
+                <a href="User.html">
+                    <div class="fas fa-user"  onclick="openModal('login')"></div>
+                </a>
+                <div class="fas fa-bars" id="menu-btn"></div>
+                <abbr title="Go to Home Page "><a href="index.html"><div  class="fa fa-arrow-left id="menu-btn"></div></a></div></abbr>
+            </div>
+        
+            <nav class="navbar">
+                <a href="index.html">home</a>
+                <a href="Foods.html">Our Foods</a>
+                <a href="#contact">contact</a>
+                <a href="#blogs">blogs</a>
+            </nav>
+        </header>
+        
+        <!-- header section ends -->
+         <!-- Signup and Login Popup -->
+         <div id="modal" class="modal-overlay">
+            <div class="modal-content" id="login-form">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <h2>Log In</h2>
+              <input type="text" id="login-username" placeholder="Enter Username" required>
+              <div class="error" id="login-username-error"></div>
+              <input type="password" id="login-password" placeholder="Enter Password" required>
+              <div class="error" id="login-password-error"></div>
+              <button onclick="login()">Log In</button>
+              <p>New user? <a onclick="openModal('signup')">Sign up</a></p>
+            </div>
+            <div class="modal-content" id="signup-form" style="display:none;">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <h2>Sign Up</h2>
+              <input type="text" id="signup-username" placeholder="Enter Username" required>
+              <div class="error" id="signup-username-error"></div>
+              <input type="password" id="signup-password" placeholder="Enter Password" required>
+              <div class="error" id="signup-password-error"></div>
+              <button onclick="signup()">Sign Up</button>
+              <p>Already have an account? <a onclick="openModal('login')">Log In</a></p>
+            </div>
+          </div>
+    <a id="myass"></a>
+<section class="packages" id="packages" data-aos="fade-left">
+    <!-- <h1 class="heading" data-aos="zoom-out"> our <span>Foods</span> </h1> -->
+    <h1 class="heading" data-aos="zoom-out" style="margin-top: 50px;"> our <span>Foods</span> </h1>
+    <div class="box-container">
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="images/blog-1.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Cheese Burger </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹290.99 <span>₹350.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="images/blog-2.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Chicken Burger </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹275.50 <span>₹320.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="images/blog-3.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Chicken Biryani </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹350.00 <span>₹400.00</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="images/blog-4.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Egg Biryani </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹260.99 <span>₹320.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="images/blog-5.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Roasted Chicken </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹320.99 <span>₹380.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="images/blog-6.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Tandoori Chicken </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹340.50 <span>₹400.00</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://vaya.in/recipes/wp-content/uploads/2018/11/Pasta-in-Tomato-Sauce-Red-Pasta.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Red Pasta </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹220.99 <span>₹270.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://www.inthekitchenwithmatt.com/wp-content/uploads/2019/09/White-pasta-sauce-800x530.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> White Pasta </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹240.99 <span>₹300.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://atanurrannagharrecipe.com/wp-content/uploads/2023/01/Chicken-Changezi-Photo-01.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Chicken Changezi </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹370.99 <span>₹420.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://purendesi.in/wp-content/uploads/2024/03/shahi-paneer-recipe.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Shahi Paneer </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹280.50 <span>₹330.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://tikkastotapas.com/wp-content/uploads/2021/08/IMG_9208-2.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Daal Fry </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹180.99 <span>₹230.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="https://assets.epicurious.com/photos/62069cd50297ea306174e51d/1:1/w_4294,h_4294,c_limit/Naan_RECIPE_021022_27679.jpg" alt="">
+                <h3> <i class="fas fa-utensils"></i> Butter Naan </h3>
+            </div>
+            <div class="content">
+                <div class="price"> ₹100.99 <span>₹130.99</span> </div>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.</p>
+                <a href="#" class="btn"> Order now</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up">
+            <h3>our branches</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> india </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> russia </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> japan </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> france </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> canada </a>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> home </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Our Foods </a>
+            <!-- <a href="#"> <i class="fas fa-chevron-right"></i> services </a> -->
+            <!-- <a href="#"> <i class="fas fa-chevron-right"></i> review </a> -->
+            <a href="#"> <i class="fas fa-chevron-right"></i> contact </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> blogs </a>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +91 9610655666 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+            <a href="#"> <i class="fa fa-archive"></i> <span style="text-transform: lowercase;">t</span>avishhussain911@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> AJmer, India - 305001 </a>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+    </div>
+
+    <div class="credit"><span>Tavish HUssain</span>&copy; | all rights reserved </div>
+
+</section>
+
+<!-- <script src="script.js"> -->
+<script src="js/script.js"></script>
+<!-- <scr>console.log("<h1></h1>");</scr/ipt> -->
+<script>
+let cart = [];
+
+// Function to open quantity modal
+function openQuantityModal(itemName, price) {
+    const modal = document.createElement('div');
+    modal.className = 'quantity-modal';
+    
+    let quantity = 1;
+    
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close" onclick="this.closest('.quantity-modal').remove()">&times;</span>
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">${itemName}</h2>
+            <p style="font-size: 1.6rem;">Price: ₹${price}</p>
+            <div class="quantity-selector">
+                <button onclick="this.nextElementSibling.textContent = Math.max(1, --this.nextElementSibling.textContent)" style="font-size: 2rem;">-</button>
+                <span style="font-size: 2rem;">${quantity}</span>
+                <button onclick="this.previousElementSibling.textContent = ++this.previousElementSibling.textContent" style="font-size: 2rem;">+</button>
+            </div>
+            <button onclick="addToCart('${itemName}', ${price}, parseInt(this.previousElementSibling.querySelector('span').textContent))" style="font-size: 1.8rem; padding: 1rem 2rem; background-color: #27ae60; color: white; border: none; border-radius: 5px; cursor: pointer;">Add to Cart</button>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+}
+
+// Function to add items to cart
+function addToCart(name, price, quantity) {
+    cart.push({
+        name: name,
+        price: price,
+        quantity: quantity
+    });
+    
+    // Update cart badge
+    const cartBadge = document.querySelector('.cart-badge') || createCartBadge();
+    cartBadge.style.display = 'block';
+    cartBadge.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+    
+    // Close the quantity modal
+    document.querySelector('.quantity-modal').remove();
+}
+
+// Function to create cart badge
+function createCartBadge() {
+    const badge = document.createElement('span');
+    badge.className = 'cart-badge';
+    badge.style.cssText = `
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 0.5rem 0.8rem;
+        font-size: 1.4rem;
+    `;
+    document.querySelector('#theme-btn').style.position = 'relative';
+    document.querySelector('#theme-btn').appendChild(badge);
+    return badge;
+}
+
+// Function to show cart
+function showCart() {
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    
+    const modal = document.createElement('div');
+    modal.className = 'cart-modal';
+    
+    let total = 0;
+    let cartHTML = `
+        <div class="modal-content" style="min-width: 50%; max-width: 80%;">
+            <span class="close" onclick="this.closest('.cart-modal').remove()">&times;</span>
+            <h2 style="font-size: 2.4rem; margin-bottom: 2rem;">Your Cart</h2>
+            <div class="cart-items">
+    `;
+    
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        cartHTML += `
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; border-bottom: 1px solid #ddd; font-size: 1.6rem;">
+                <div>
+                    <h3 style="font-size: 1.8rem;">${item.name}</h3>
+                    <p>Quantity: ${item.quantity}</p>
+                </div>
+                <div>
+                    <p>₹${itemTotal.toFixed(2)}</p>
+                    <button onclick="removeFromCart(${index})" style="background-color: #dc3545; padding: 0.5rem 1rem; font-size: 1.4rem;">Remove</button>
+                </div>
+            </div>
+        `;
+        total += itemTotal;
+    });
+    
+    cartHTML += `
+            </div>
+            <div class="cart-total" style="margin-top: 2rem; text-align: right;">
+                <h3 style="font-size: 2rem;">Total: ₹${total.toFixed(2)}</h3>
+                <a href="checkout.html"><button onclick="checkout()" style="font-size: 1.8rem; padding: 1rem 2rem; background-color: #27ae60; margin-top: 1rem;">Checkout</button></a>
+            </div>
+        </div>
+    `;
+    
+    modal.innerHTML = cartHTML;
+    document.body.appendChild(modal);
+}
+
+// Function to remove items from cart
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    document.querySelector('.cart-modal').remove();
+    
+    // Update cart badge
+    const cartBadge = document.querySelector('.cart-badge');
+    if (cart.length === 0) {
+        cartBadge.style.display = 'none';
+    } else {
+        cartBadge.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+    }
+    
+    showCart();
+}
+
+// Function to handle checkout
+function checkout() {
+    alert('Thank you for your order! Total amount: ₹' + cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2));
+    cart = [];
+    document.querySelector('.cart-badge').style.display = 'none';
+    document.querySelector('.cart-modal').remove();
+}
+
+// Add event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Add click handlers to all order now buttons
+    const orderButtons = document.querySelectorAll('.btn');
+    orderButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const foodItem = e.target.closest('.box');
+            const itemName = foodItem.querySelector('h3').textContent;
+            const price = parseFloat(foodItem.querySelector('.price').textContent.match(/₹(\d+\.\d+)/)[1]);
+            openQuantityModal(itemName, price);
+        });
+    });
+
+    // Add click handler to cart icon
+    const cartIcon = document.querySelector('#theme-btn');
+    cartIcon.addEventListener('click', showCart);
+});
+</script>
+
+<style>
+.quantity-modal, .cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    position: relative;
+    min-width: 300px;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2.4rem;
+    cursor: pointer;
+}
+
+.quantity-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.cart-items {
+    max-height: 400px;
+    overflow-y: auto;
+}
+</style>
+<script src="js/script.js"></script>
+
+
+
+</body>
+</html>

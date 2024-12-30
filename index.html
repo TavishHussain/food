@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="https://img.freepik.com/premium-vector/beautiful-unique-food-restaurant-company-logo-design_981150-2156.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+<!--  -->
+    <a href="#" class="logo"> <i class="fas fa-utensils"></i> <span style="text-transform: lowercase;color:red">O</span>Rd<font color="red">E</font>rIn<span style="color: red;">G</span></a>
+    <div class="icons">
+        <div id="toggle-dark-mode" class="dark-mode-btn">
+            <i class="fas fa-moon"></i>
+        </div>
+    </div>
+    <form action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="searchBox">
+        <label for="searchBox" class="fas fa-search"></label>
+    </form>
+
+    <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fa-solid fa-cart-shopping" id="theme-btn"></div>
+        <!-- <a href="User.html"> -->
+            <div class="fas fa-user"  onclick="openModal('login')"></div>
+        <!-- </a> -->
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="Foods.html">Our Foods</a>
+        <a href="#contact">contact</a>
+        <a href="#blogs">blogs</a>
+    </nav>
+
+     
+</header>
+
+<!-- header section ends -->
+ <!-- Signup and Login Popup -->
+ <div id="modal" class="modal-overlay">
+    <div class="modal-content" id="login-form">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Log In</h2>
+      <input type="text" id="login-username" placeholder="Enter Username" required>
+      <div class="error" id="login-username-error"></div>
+      <input type="password" id="login-password" placeholder="Enter Password" required>
+      <div class="error" id="login-password-error"></div>
+      <button onclick="login()">Log In</button>
+      <p style="font-size: 1.6rem;">New user? <a onclick="openModal('signup')">Sign up</a></p>
+    </div>
+
+    <div class="modal-content" id="signup-form" style="display:none;">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Sign Up</h2>
+      <input type="text" id="signup-username" placeholder="Enter Username" required>
+      <div class="error" id="signup-username-error"></div>
+      <input type="password" id="signup-password" placeholder="Enter Password" required>
+      <div class="error" id="signup-password-error" ></div>
+      <button onclick="signup()" style="font-size: 2rem;">Sign Up</button>
+      <p style="font-size: 1.6rem;">Already have an account? <a onclick="openModal('login')">Log In</a></p>
+    </div>
+  </div>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="image" data-aos="fade-left">
+        <img src="burger.png" alt="image not available !">
+    </div>
+
+    <div class="content" data-aos="fade-up">
+        <h3>Most Delicious Foods For You</h3>
+        <p>"Enjoy delicious meals delivered with love, right to your doorstep! We ensure fresh and flavorful food, prepared with care, reaches you within 45 minutes. Let us make every bite a special experience!"
+        </p>
+        <a href="Foods.html" class="btn">explore now</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- filter form section starts  -->
+
+<section class="form-container" data-aos="fade-left">
+
+    <form action="">
+
+        <div class="inputBox">
+            <span data-aos="fade-left">where</span>
+            <br>
+            <input type="text" placeholder="search places">
+            
+        </div>
+
+        <div class="inputBox">
+            <span>When</span>
+            <input type="date">
+        </div>
+
+        <div class="inputBox">
+            <span>Time</span>
+            <input type="time">
+        </div>
+
+        <input type="submit" value="book now" class="btn">
+
+    </form>
+
+</section>
+
+<!-- filter form section ends -->
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>contact</span> us </h1>
+
+    <form action="https://api.web3forms.com/submit" method="POST" data-aos="zoom">
+        <input type="hidden" name="access_key" value="0d87416a-a52f-4640-9c14-74556c190402">
+    
+        <div class="inputBox">
+            <input type="text" name="name" placeholder="name" data-aos="fade-up" required>
+            <input type="email" name="email" placeholder="email" data-aos="fade-up" required>
+        </div>
+    
+        <div class="inputBox">
+            <input type="number" name="number" placeholder="number" data-aos="fade-up" required>
+            <input type="text" name="subject" placeholder="subject" data-aos="fade-up" required>
+        </div>
+    
+        <textarea name="message" placeholder="your message" cols="30" rows="10" data-aos="fade-up" required></textarea>
+        
+        <input type="submit" value="send message" class="btn">
+    </form>
+    
+
+</section>
+
+<!-- contact section ends -->
+
+<!-- blog section starts  -->
+<section class="blogs" id="blogs">
+    <h1 class="heading"> our <span>blogs</span> </h1>
+    <div class="box-container">
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="images/img1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>What is bombay and hyderabadi biryani?</h3>
+                <p class="extra-content">
+                    Bombay biryani has a slightly tangy flavor, while Hyderabadi 
+                    <span class="more-text"> biryani is spicier with a distinct aroma. Bombay biryani has a mix of spicy and sweet flavors. It is often prepared with potatoes and is much milder compared to Hyderabadi biryani. Hyderabadi biryani is famous for its use of saffron and intense spices that give it a rich, flavorful taste.  The preparation styles of the two vary as well: Bombay biryani often includes tomatoes and yogurt, while Hyderabadi biryani can be either kachhi or pakki. The cooking method of Hyderabadi biryani involves slow cooking the rice and marinated meat together, resulting in layers of flavor. Bombay biryani usually cooks the meat and rice separately.</span>
+                </p>
+                <a href="#" class="btn toggle-content">read more <i class="fas fa-plus"></i></a>
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-calendar"></i> 1st jan, 2025 </a>
+                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>How many types of burger are there?</h3>
+                <p class="extra-content">
+                    There are numerous types of burgers, 
+                    <span class="more-text">including cheeseburgers, veggie burgers, chicken burgers, and more. Cheeseburgers are the most popular, with melted cheese adding flavor and richness to the patty. Veggie burgers, often made with ingredients like beans, lentils, or tofu, are a popular option for those looking for a meatless alternative. Chicken burgers, on the other hand, provide a lighter option compared to beef. Other types of burgers include fish burgers, which are made with fish patties, and gourmet burgers, which are created with high-end ingredients like truffle, wagyu beef, or premium cheeses. Each type offers a unique flavor experience.</span>
+                </p>
+                <a href="#" class="btn toggle-content">read more <i class="fas fa-plus"></i></a>
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-calendar"></i> 1st jan, 2025 </a>
+                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <div class="image">
+                <img src="images/img3.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>Did you know some facts about pizza?</h3>
+                <p class="extra-content">
+                    Pizza originated in Italy, 
+                    <span class="more-text"> but over time, it has spread worldwide, becoming one of the most beloved fast foods. The classic Neapolitan pizza has a thin crust, topped with fresh tomatoes, mozzarella cheese, and basil. Chicago-style pizza, on the other hand, is famous for its thick, deep-dish crust that’s more like a pie than the traditional pizza. Modern pizza has seen the rise of creative variations, with toppings that range from pineapple and ham (Hawaiian pizza) to gourmet ingredients like arugula, prosciutto, and balsamic glaze. Pizza is incredibly versatile and can be tailored to suit almost any taste preference.</span>
+                </p>
+                <a href="#" class="btn toggle-content">read more <i class="fas fa-plus"></i></a>
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-calendar"></i> 1st jan, 2025 </a>
+                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box" data-aos="fade-up">
+            <h3>our branches</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> india </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> russia </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> japan </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> france </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> canada </a>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> home </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Our Foods </a>
+            <!-- <a href="#"> <i class="fas fa-chevron-right"></i> services </a> -->
+            <!-- <a href="#"> <i class="fas fa-chevron-right"></i> review </a> -->
+            <a href="#"> <i class="fas fa-chevron-right"></i> contact </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> blogs </a>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +91 9610655666 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
+            <a href="#"> <i class="fa fa-archive"></i> <span style="text-transform: lowercase;">t</span>avishhussain911@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> AJmer, India - 305001 </a>
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+    </div>
+
+    <div class="credit"><span>Tavish HUssain</span>&copy; | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script src="signin.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 1000, // Animation duration
+        // once: true      // Only animate once
+    });
+</script>
+<script>
+    // Check if user is logged in by looking for currentUser in localStorage
+    window.addEventListener('DOMContentLoaded', function() {
+        const currentUser = localStorage.getItem('currentUser');
+        if (!currentUser) {
+            // If no user is logged in, redirect to login page
+            window.location.href = 'login.html';
+        }
+    });
+</script>
+
+</body>
+</html>

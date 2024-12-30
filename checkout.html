@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .payment-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        .payment-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .payment-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .payment-option {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-option:hover {
+            border-color: #27ae60;
+            transform: translateY(-5px);
+        }
+
+        .payment-option i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .payment-option.selected {
+            border-color: #27ae60;
+            background-color: #f0fff0;
+        }
+
+        .payment-form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .payment-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.6rem;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.6rem;
+        }
+
+        .pay-button {
+            background-color: #27ae60;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .pay-button:hover {
+            background-color: #219a52;
+        }
+
+        .upi-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .upi-icons img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-header">
+            <h2>Select Payment Method</h2>
+            <p style="font-size: 1.6rem;"><span id="total-amount"></span></p>
+        </div>
+    
+        <div class="payment-options">
+            <div class="payment-option" data-method="upi" onclick="selectPaymentOption(this)">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>UPI Payment</h3>
+            </div>
+            <div class="payment-option" data-method="card" onclick="selectPaymentOption(this)">
+                <i class="fas fa-credit-card"></i>
+                <h3>Card Payment</h3>
+            </div>
+            <div class="payment-option" data-method="netbanking" onclick="selectPaymentOption(this)">
+                <i class="fas fa-university"></i>
+                <h3>Net Banking</h3>
+            </div>
+        </div>
+    
+        <div class="payment-form" id="upi-form">
+            <div class="upi-icons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/PhonePe_Logo.svg/2560px-PhonePe_Logo.svg.png" alt="PhonePe">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/2560px-Google_Pay_Logo.svg.png" alt="Google Pay">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-paytm-226448.png" alt="Paytm">
+            </div>
+            <div class="form-group">
+                <label>Enter UPI ID</label>
+                <input type="text" placeholder="username@upi">
+            </div>
+            <button class="pay-button" onclick="processPayment()">Pay Now</button>
+        </div>
+    
+        <div class="payment-form" id="card-form">
+            <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="form-group">
+                <label>Card Holder Name</label>
+                <input type="text" placeholder="ABCD">
+            </div>
+            <div style="display: flex; gap: 20px;">
+                <div class="form-group" style="flex: 1;">
+                    <label>Expiry Date</label>
+                    <input type="text" placeholder="MM/YY">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>CVV</label>
+                    <input type="password" placeholder="***">
+                </div>
+            </div>
+            <button class="pay-button" onclick="processPayment()">Pay Now</button>
+        </div>
+    
+        <div class="payment-form" id="netbanking-form">
+            <div class="form-group">
+                <label>Select Bank</label>
+                <select style="width: 100%; padding: 10px; font-size: 1.6rem;">
+                    <option>Select a bank</option>
+                    <option>State Bank of India</option>
+                    <option>HDFC Bank</option>
+                    <option>ICICI Bank</option>
+                    <option>Axis Bank</option>
+                </select>
+            </div>
+            <button class="pay-button" onclick="processPayment()">Pay Now</button>
+        </div>
+    </div>
+    
+    <script>
+     function selectPaymentOption(optionElement) {
+    const paymentOptions = document.querySelectorAll('.payment-option');
+    const paymentForms = document.querySelectorAll('.payment-form');
+
+    for (let i = 0; i < paymentOptions.length; i++) {
+        paymentOptions[i].classList.remove('selected');
+    }
+
+    optionElement.classList.add('selected');
+
+    for (let i = 0; i < paymentForms.length; i++) {
+        paymentForms[i].classList.remove('active');
+    }
+
+    const formId = optionElement.dataset.method + '-form';
+    document.getElementById(formId).classList.add('active');
+}
+
+function processPayment() {
+    alert('Payment processed successfully!');
+    localStorage.removeItem('cartTotal');
+    window.location.href = 'Foods.html';
+}
+
+        
+    </script>
+</body>
+</html>

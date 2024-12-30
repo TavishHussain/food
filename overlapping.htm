@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .gallary{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+        .gallary img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallary">
+        <img src="https://img.freepik.com/free-photo/sassy-goodlooking-redhead-female-yellow-sweater-listen-music-white-headphones-touch-earphones_1258-126219.jpg?t=st=1732469590~exp=1732473190~hmac=5384a142b7ffae86a9d3e152e30e42d35d0a8aade5e7def71859bc40e958e217&w=900" alt="">
+        <img src="https://img.freepik.com/free-photo/impressed-startled-excited-cute-redhead-female-receive-big-gift-shaping-large-object-product_1258-130326.jpg?t=st=1732469620~exp=1732473220~hmac=e243d439623a1f568519831f8216aea7b045057d0bf43e351ab84d8a422939f3&w=900" alt="">
+        <img src="https://img.freepik.com/free-photo/beautiful-life-woman-gardening-nature_53876-13906.jpg?t=st=1732469652~exp=1732473252~hmac=7e53ee67f9204da8aac07933311803f15405304c9cd9e7bebb4a8dd69c17ef2a&w=740" alt="">
+    </div>
+<script>
+    const gallery = document.querySelector('.gallary');
+    const images = document.querySelectorAll('.gallary img');
+
+    gallery.addEventListener('scroll', () => {
+        const scrollTop = gallery.scrollTop;
+        
+        images.forEach((img, index) => {
+            // Calculate scale based on scroll position
+            const scale = Math.max(0.5, 1 - (scrollTop - (index * window.innerHeight)) / 1000);
+            
+            // Apply transform only if image is in viewport
+            if (scale <= 1) {
+                img.style.transform = `scale(${scale})`;
+            } else {
+                img.style.transform = 'scale(1)';
+            }
+        });
+    });
+</script>
+</body>
+</html>
